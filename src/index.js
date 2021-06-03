@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import RadioButton from './RadioButton'
+import Listen from './Listen'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <RadioButton />
+    <Listen />
   </React.StrictMode>,
   document.getElementById('root')
 );
