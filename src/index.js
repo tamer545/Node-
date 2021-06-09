@@ -7,13 +7,14 @@ import Listen from './Listen'
 import BMI from './BMI'
 import TwoListView from './TwoListView'
 import API from './API'
+import APICards from './APICards'
 import reportWebVitals from './reportWebVitals';
 import BootstrapBsp from "./BootstrapBsp";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 ReactDOM.render(
   <React.StrictMode>
-    <API />
+    <APICards />
   </React.StrictMode>,
   document.getElementById('root')
 );
