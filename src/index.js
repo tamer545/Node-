@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 import RadioButton from './RadioButton'
 import Listen from './Listen'
+import BMI from './BMI'
+import TwoListView from './TwoListView'
+import API from './API'
 import reportWebVitals from './reportWebVitals';
+import BootstrapBsp from "./BootstrapBsp";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Listen />
+    <API />
   </React.StrictMode>,
   document.getElementById('root')
 );
