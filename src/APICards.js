@@ -2,7 +2,7 @@ import {Button, Form, Image} from "react-bootstrap";
 import {useState} from "react";
 import './App.css';
 
-export default function BootstrapBsp() {
+export default function APICards() {
 
     const [deckID, setDeckID] = useState('')
     const [image, setImage] = useState('')
@@ -79,16 +79,12 @@ export default function BootstrapBsp() {
                 <Button disabled={state} onClick={() => drawCard()}>Draw a Card</Button>
                 <br/>
                 <br/>
-                {clubs.sort()}
                 {clubs.map((club) => <Image src={club} style={{width: '100px'}}></Image>)}
                 <br/>
-                {diamonds.sort()}
                 {diamonds.map((diamond) => <Image src={diamond} style={{width: '100px'}}></Image>)}
                 <br/>
-                {spades.sort()}
                 {spades.map((spade) => <Image src={spade} style={{width: '100px'}}></Image>)}
                 <br/>
-                {hearts.sort()}
                 {hearts.map((heart) => <Image src={heart} style={{width: '100px'}}></Image>)}
 
             </Form>
