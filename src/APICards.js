@@ -8,15 +8,13 @@ export default function BootstrapBsp() {
     const [image, setImage] = useState('')
     const [state, setState] = useState(true)
 
-    const [cards, setCards] = useState([]);
-    const [heart, setHeart] = useState([]);
-    const [kreuz, setKreuz] = useState([]);
-    const [pik, setPik] = useState([]);
-    const [karo, setKaro] = useState([]);
+    const [hearts, setHeart] = useState([]);
+    const [diamonds, setDiamond] = useState([]);
+    const [spades, setPik] = useState([]);
+    const [clubs, setClubs] = useState([]);
 
 
     function resetCards() {
-        setCards([])
         setImage('')
     }
 
@@ -38,23 +36,28 @@ export default function BootstrapBsp() {
             .then(response => response.json())
             .then(data => {
                 setImage(data.cards[0].image)
-                setCards([...cards, data.cards[0]])
-                sort()
+                sort(data)
             })
             .catch((error) => {
                 console.error('Error:', error);
             });
     }
 
-    function sort() {
-        if (cards[0].suit == "HEARTS") {
-            setHeart([...heart, cards[0].image])
-        } else if (cards[0].suit == "ACE") {
-            setKreuz([...kreuz, cards[0].image])
-        } else if (cards[0].suit == "SPADES") {
-            setPik([...pik, cards[0].image])
-        } else {
-            setKaro([...karo, cards[0].image])
+    function sort(data) {
+        console.log("sort")
+        if (data.cards[0].suit == "HEARTS") {
+            setHeart([...hearts, data.cards[0].image])
+            console.log("heart")
+        } else if (data.cards[0].suit == "DIAMONDS") {
+            setDiamond([...diamonds, data.cards[0].image])
+            console.log("diamond")
+        } else if (data.cards[0].suit == "SPADES") {
+            setPik([...spades, data.cards[0].image])
+            console.log("spade")
+        } else if (data.cards[0].suit == "CLUBS"){
+            setClubs([...clubs, data.cards[0].image])
+            console.log("clubs")
+            console.log(clubs)
         }
     }
 
@@ -71,13 +74,13 @@ export default function BootstrapBsp() {
             <Button onClick={() => newDeck()}>new Deck</Button>
             <Button disabled={state} onClick={() => drawCard()}>Draw a Card</Button>
             <br/>
-            {karo.map((karo) => <Image src={karo[0].image}></Image>)}
+            {clubs.map((club) => <Image src={club}></Image>)}
             <br/>
-            {kreuz.map((kreuz) => <Image src={kreuz[0].image}></Image>)}
+            {diamonds.map((diamond) => <Image src={diamond}></Image>)}
             <br/>
-            {pik.map((pik) => <Image src={pik[0].image}></Image>)}
+            {spades.map((spade) => <Image src={spade}></Image>)}
             <br/>
-            {heart.map((heart) => <Image src={heart[0].image}></Image>)}
+            {hearts.map((heart) => <Image src={heart}></Image>)}
 
         </Form>
 
