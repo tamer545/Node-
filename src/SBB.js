@@ -1,6 +1,8 @@
 import {Button, Container, Form, Image, ListGroup, ListGroupItem, Table} from "react-bootstrap";
 import {useState} from "react";
 import './App.css';
+import bus from "./images/bus.png"
+import zug from "./images/zug.png"
 
 export default function SBB() {
 
@@ -35,18 +37,18 @@ export default function SBB() {
             <br/>
 
             <Container>
-            <ul>
-                {connections.map((con, index) =>
-                    <ListGroup>
+                <ListGroup>
+                    {connections.map((con, index) =>
                         <ListGroupItem key={index}>
-                            <h5>Abfahrtsgleis:</h5> {con.to.platform}
+                            <h4>{con.from.station.name} --> {con.to.station.name}</h4>
+                            <br/>
+                            {con.sections[0].journey.category === "B" ? <img width={50} src={bus}/>: <img width={50} src={zug}/>}
+                            {con.to.platform != null && <> <h5>Abfahrtsgleis:</h5>{con.to.platform} </>}
                             <h5>Abfahrtszeit:</h5> {formatTime(new Date(con.from.departure))}
                             <h5>Ankunftszeit:</h5> {formatTime(new Date(con.to.arrival))}
                         </ListGroupItem>
-                        <br/>
-                    </ListGroup>
-                )}
-            </ul>
+                    )}
+                </ListGroup>
             </Container>
         </Form>
 
