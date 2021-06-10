@@ -10,12 +10,18 @@ export default function BootstrapBsp() {
 
     const [hearts, setHeart] = useState([]);
     const [diamonds, setDiamond] = useState([]);
-    const [spades, setPik] = useState([]);
+    const [spades, setSpade] = useState([]);
     const [clubs, setClubs] = useState([]);
+
+    let values = ['ACE', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'JACK', 'QUEEN', 'KING']
 
 
     function resetCards() {
         setImage('')
+        setHeart([])
+        setDiamond([])
+        setSpade([])
+        setClubs([])
     }
 
     function newDeck() {
@@ -52,37 +58,42 @@ export default function BootstrapBsp() {
             setDiamond([...diamonds, data.cards[0].image])
             console.log("diamond")
         } else if (data.cards[0].suit == "SPADES") {
-            setPik([...spades, data.cards[0].image])
+            setSpade([...spades, data.cards[0].image])
             console.log("spade")
-        } else if (data.cards[0].suit == "CLUBS"){
+        } else if (data.cards[0].suit == "CLUBS") {
             setClubs([...clubs, data.cards[0].image])
             console.log("clubs")
-            console.log(clubs)
         }
+
+
+        return (
+            <Form>
+                <h1>Deck of Cards</h1>
+                <br/>
+                <h5>My Card Deck ID is: {deckID}</h5>
+                <br/>
+                <Image src={image}></Image>
+                <br/>
+                <br/>
+                <Button onClick={() => newDeck()}>new Deck</Button>
+                <Button disabled={state} onClick={() => drawCard()}>Draw a Card</Button>
+                <br/>
+                <br/>
+                {clubs.sort()}
+                {clubs.map((club) => <Image src={club} style={{width: '100px'}}></Image>)}
+                <br/>
+                {diamonds.sort()}
+                {diamonds.map((diamond) => <Image src={diamond} style={{width: '100px'}}></Image>)}
+                <br/>
+                {spades.sort()}
+                {spades.map((spade) => <Image src={spade} style={{width: '100px'}}></Image>)}
+                <br/>
+                {hearts.sort()}
+                {hearts.map((heart) => <Image src={heart} style={{width: '100px'}}></Image>)}
+
+            </Form>
+
+        );
     }
 
-
-    return (
-        <Form>
-            <h1>Deck of Cards</h1>
-            <br/>
-            <h5>My Card Deck ID is: {deckID}</h5>
-            <br/>
-            <Image src={image}></Image>
-            <br/>
-            <br/>
-            <Button onClick={() => newDeck()}>new Deck</Button>
-            <Button disabled={state} onClick={() => drawCard()}>Draw a Card</Button>
-            <br/>
-            {clubs.map((club) => <Image src={club}></Image>)}
-            <br/>
-            {diamonds.map((diamond) => <Image src={diamond}></Image>)}
-            <br/>
-            {spades.map((spade) => <Image src={spade}></Image>)}
-            <br/>
-            {hearts.map((heart) => <Image src={heart}></Image>)}
-
-        </Form>
-
-    );
 }
