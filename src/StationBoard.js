@@ -1,8 +1,8 @@
 import {Button, Container, Form, Image, ListGroup, ListGroupItem, Table} from "react-bootstrap";
 import {useState} from "react";
 import './App.css';
-import bus from "./images/bus.png"
-import zug from "./images/zug.png"
+import bus from "../../firebaseaxa/src/images/bus.png"
+import zug from "../../firebaseaxa/src/images/zug.png"
 
 export default function Stationboard() {
     let [standort, setStandort] = useState([])

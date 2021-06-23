@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import SBBMain from './SBBMain'
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter} from "react-router-dom";
+import JavaScriptTricks from "./JavaScriptTricks";
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <SBBMain/>
+            <JavaScriptTricks/>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
