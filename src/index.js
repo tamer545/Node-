@@ -4,12 +4,17 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter} from "react-router-dom";
+import SBBMain from './SBBMain'
 import JavaScriptTricks from "./JavaScriptTricks";
+import CounterTest from "./CounterTest";
+import UseRefTest from "./UseRefTest";
+import RemountTest from "./RemountTest";
+import ReactChildrenTest from "./ReactChildrenTest";
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <JavaScriptTricks/>
+            <ReactChildrenTest/>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
