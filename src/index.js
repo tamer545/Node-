@@ -10,11 +10,12 @@ import CounterTest from "./CounterTest";
 import UseRefTest from "./UseRefTest";
 import RemountTest from "./RemountTest";
 import ReactChildrenTest from "./ReactChildrenTest";
+import BMI from "./BMI";
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <ReactChildrenTest/>
+            <BMI/>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')

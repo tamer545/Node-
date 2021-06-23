@@ -4,6 +4,7 @@ import React, {useRef, useState} from "react";
 import SBB from "./SBB";
 import {Route, Switch, Link, useHistory} from "react-router-dom";
 import Stationboard from "./StationBoard";
+import BMI from "./BMI";
 
 
 export default function SBBMain() {
@@ -32,6 +33,7 @@ export default function SBBMain() {
                 <Route exact path="/" component={SBB}/>
                 <Route path="/stationboard" component={Stationboard}/>
                 <Route path="/takemehome" component={SBB}/>
+                <Route path="/bmi/bmiID" component={BMI}/>
             </Switch>
             <button type="button" onClick={handleHome}>Go home</button>
             <button type="button" onClick={handleBack}>Go back</button>
