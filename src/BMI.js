@@ -19,8 +19,8 @@ export default function BMI() {
         if (!isNaN(cm) && !isNaN(kg)) {
             setBmi(parseInt(kg) / parseInt(cm) / parseInt(cm) * 10000)
         }
-
-     /*   const match = useRouteMatch({path: "/bmi/bmiID", strict: true, sensitive: true})
+    }
+       const match = useRouteMatch({path: "/bmi/bmiID", strict: true, sensitive: true})
         console.log("match:")
         console.log(match)
         if (match) {
@@ -28,8 +28,8 @@ export default function BMI() {
             console.log("path: " + match.path)
             console.log("url     : " + match.url)
             console.log(match.params)
-        }*/
-    }
+        }
+
     return (
         <div>
             BMI

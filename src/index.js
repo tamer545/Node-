@@ -11,11 +11,14 @@ import UseRefTest from "./UseRefTest";
 import RemountTest from "./RemountTest";
 import ReactChildrenTest from "./ReactChildrenTest";
 import BMI from "./BMI";
+import LikeButton from "./LikeButton";
+import DropDownVorstellung from "./DropDownVorstellung";
+import ZweiAbhaengigeDropDowns from "./ZweiAbhaengigeDropDowns";
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <BMI/>
+            <ZweiAbhaengigeDropDowns/>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')

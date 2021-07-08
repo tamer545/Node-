@@ -26,15 +26,16 @@ export default function SBBMain() {
                 <br/>
                 <Link to="/stationboard">Stationboard</Link>
                 <br/>
-                <Link to="/takemehome">Users</Link>
+                <Link to="/home">Home</Link>
                 <br/>
             </nav>
             <Switch>
                 <Route exact path="/" component={SBB}/>
                 <Route path="/stationboard" component={Stationboard}/>
-                <Route path="/takemehome" component={SBB}/>
+                <Route path="/home" component={SBBMain}/>
                 <Route path="/bmi/bmiID" component={BMI}/>
             </Switch>
+            <br/>
             <button type="button" onClick={handleHome}>Go home</button>
             <button type="button" onClick={handleBack}>Go back</button>
         </div>
